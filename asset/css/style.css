@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Utility */
+/* Fine utility */
+
+/* aside */
+aside{
+    height: calc(100vh - 100px);
+    background-color: black;
+    color: white;
+    width: 8%;
+} 
+#nav-lateral{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}    
+   
+/* parte superiore dell'aside */
+.icon-up{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icon-up div{
+    padding: 5px 0;
+}
+
+.icon-up img{
+    width: 20px;
+}
+/* parte inferiore dell'aside */
+.icon-down{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}    
+.icon-down .fa-regular{
+    font-size: 12px;
+    padding-bottom: 20px;
+}
+.icon-down img{
+    width: 20px;
+    background-color: grey;
+    border-radius: 50%;
+}
