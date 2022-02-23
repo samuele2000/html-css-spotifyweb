@@ -67,11 +67,13 @@ aside{
 /* parte centrale */
 /* header con bottone upgrade */
 header{
-    padding: 30px 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    /* position: fixed; */
-    width: 100%;
-    
+    padding: 30px 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: right;
+    width: 92%;
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 header a{
     padding: 5px 20px;
@@ -79,9 +81,12 @@ header a{
     border-radius: 50px;
     text-decoration: none;
     color: white;
-    margin-left: 45%;
+    
 }
     /*nav centrale  */
+#nav-central{
+    margin-top: 70px;
+}    
 #nav-central ul li a{
     text-decoration: none;
     
@@ -107,10 +112,11 @@ header a{
  #main{
      width: 90%;
      margin: 0 auto;
-    
-     
-} 
+}    
+     /*parte recently  */
+ 
 #main h2{
+    padding-top: 15px;
     padding-bottom: 20px;
     font-size: 20px;
     color: white;
@@ -122,24 +128,38 @@ header a{
     flex-wrap: wrap;
     justify-content: space-between;
 }
- #main .recently div{
+ #main div{
      flex-basis: calc(50% - 5px);
      text-align: center;
-     
-}    
+}      
+   
 
 
- #main .recently div img{
+ #main div img{
      width: 100%;
 }
-#main .recently div h4{
+#main div h4{
     margin: 10px 0 5px 0;
     font-size: 16px;
     color: white;
 }
-#main .recently div span{
+#main div span{
     color: grey;
 }
+/* parte create */
+#main .create{
+    display: flex;
+    justify-content: space-between;
+}
+/* parte popolar */
+#main .popolar{
+    display: flex;
+    justify-content: space-between;
+}
+#main .popolar img{
+    border-radius: 50%;
+}
+
 
 
 
