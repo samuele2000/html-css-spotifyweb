@@ -4,6 +4,24 @@
     box-sizing: border-box;
 }
 /* Utility */
+.f-14{
+    font-size: 14px;
+}
+.f-16{
+    font-size: 16px;
+}
+.f-18{
+    font-size: 18px;
+}
+.f-24{
+    font-size: 24px;
+}
+.c-white{
+    color: white;
+}
+.c-grey{
+    color: grey;
+}
 /* Fine utility */
 /* container */
 #container{
@@ -14,7 +32,7 @@
     font-size: 12px;
 }
 #central-container{
-    width: calc(100% - 8%);
+    width: calc(100% - 10%);
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -22,11 +40,10 @@
    
 
 /* aside */
-aside{
-    
+#aside{
     background-color: black;
     color: white;
-    width: 8%;
+    width: 10%;
 } 
 #nav-lateral{
     height: 100%;
@@ -36,46 +53,54 @@ aside{
 }    
    
 /* parte superiore dell'aside */
-.icon-up{
+#aside .icon-up{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.icon-up div{
+#aside .icon-up div{
     padding: 5px 0;
 }
 
-.icon-up img{
+#aside .icon-up img{
     width: 20px;
 }
+#aside .icon-up .logo img{
+    width: 25px;
+}
 /* parte inferiore dell'aside */
-.icon-down{
+#aside .icon-down{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
 }    
-.icon-down .fa-regular{
+#aside .icon-down .fa-regular{
     font-size: 12px;
     padding-bottom: 20px;
 }
-.icon-down img{
+#aside .icon-down .user{
     width: 20px;
     background-color: grey;
     border-radius: 50%;
 }
+#aside .icon-down .download{
+    width: 15px;
+    margin-bottom: 20px;
+}
+
 /* parte centrale */
 /* header con bottone upgrade */
-header{
+#header{
     padding: 30px 10px;
     background-color: rgba(0, 0, 0, 0.7);
     text-align: right;
-    width: 92%;
+    width: 90%;
     position: fixed;
     top: 0;
     right: 0;
 }
-header a{
+#header a{
     padding: 5px 20px;
     border: 1px solid white;
     border-radius: 50px;
@@ -159,6 +184,75 @@ header a{
 #main .popolar img{
     border-radius: 50%;
 }
+
+/* parte inefriore con il footer */
+#footer{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: #242424;
+}
+/* parte di sinistra */
+#footer .left{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+#footer .left img{
+    width: 40px;
+}
+#footer .left .text, .icon-2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+#footer .left .icon-2 i{
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+/* parte centrale */
+#footer .central{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#footer .central .icon-down{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+#footer .central .icon-up i{
+    margin-right: 15px;
+}
+#footer .icon-down .time{
+    height: 3px;
+    flex-basis: 80%;
+    background-color:#505050; 
+    border-radius: 10px;
+    align-self: center;
+    margin: 0 5px;
+}
+#footer .icon-down .time div{
+    width: 25%;
+    background-color: lightgray;;
+    height: 100%;
+    border-radius: 10px;
+} 
+/* parte di destra */
+#footer .right div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#footer .right div i{
+    margin-right: 10px;
+}
+
+
 
 
 
