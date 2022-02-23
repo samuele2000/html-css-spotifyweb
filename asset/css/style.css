@@ -16,11 +16,24 @@
 .f-24{
     font-size: 24px;
 }
+.f-bold{
+    font-weight: bold;
+}
 .c-white{
     color: white;
 }
 .c-grey{
     color: grey;
+}
+.w-space{
+    white-space: nowrap;
+}
+.button-plus{
+    padding: 5px;
+    background-color: grey;
+    color: black; 
+    font-size: 18px;
+    margin: 0 5px 10px 0;  
 }
 /* Fine utility */
 /* container */
@@ -32,7 +45,6 @@
     font-size: 12px;
 }
 #central-container{
-    width: calc(100% - 10%);
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -43,8 +55,8 @@
 #aside{
     background-color: black;
     color: white;
-    width: 10%;
-} 
+}     
+
 #nav-lateral{
     height: 100%;
     display: flex;
@@ -54,9 +66,11 @@
    
 /* parte superiore dell'aside */
 #aside .icon-up{
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    z-index: 2;
 }
 #aside .icon-up div{
     padding: 5px 0;
@@ -65,28 +79,66 @@
 #aside .icon-up img{
     width: 20px;
 }
-#aside .icon-up .logo img{
+#aside .icon-up .logo-small{
     width: 25px;
+    margin: 5px 5px;
+    
+}
+/* parte aggiunta per tablet e pc */
+#aside .icon-up .logo-big{
+    display: none;
+    width: 130px;
+    padding-right: 20px;
+}
+#aside .icon-up .icon{
+    display: flex;
+    align-items: center;
+}
+/* parte aggiunta per tablet e pc */
+#aside .icon-up .icon span{
+    margin-left: 5px;
+    font-weight: bold;
+    display: none;
+}
+#aside .icon-up .playlist{
+    margin-top: 5px;
+    color: grey;
+    font-weight: bold;
+    display: none;
+}
+#aside .icon-up .playlist ul{
+    list-style-type: none;
+}
+#aside .icon-up .playlist ul li{
+    margin-top: 10px;
 }
 /* parte inferiore dell'aside */
 #aside .icon-down{
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: flex-end;
-}    
-#aside .icon-down .fa-regular{
-    font-size: 12px;
-    padding-bottom: 20px;
-}
+} 
+#aside .icon-down div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}   
+
 #aside .icon-down .user{
     width: 20px;
     background-color: grey;
     border-radius: 50%;
+    margin-right: 10px;
 }
 #aside .icon-down .download{
     width: 15px;
-    margin-bottom: 20px;
+    margin-right: 10px;
+}
+/* parte aggiunta per tablet e pc */
+#aside .icon-down div span{
+    display: none;
 }
 
 /* parte centrale */
@@ -95,7 +147,7 @@
     padding: 30px 10px;
     background-color: rgba(0, 0, 0, 0.7);
     text-align: right;
-    width: 90%;
+    width: 100%;
     position: fixed;
     top: 0;
     right: 0;
@@ -114,8 +166,8 @@
 }    
 #nav-central ul li a{
     text-decoration: none;
-    
 }     
+    
 
 #nav-central ul{
     list-style-type: none;
@@ -151,16 +203,14 @@
  #main .recently{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    
 }
  #main div{
      flex-basis: calc(50% - 5px);
      text-align: center;
+     margin-right: 5px;
 }      
-   
-
-
- #main div img{
+#main div img{
      width: 100%;
 }
 #main div h4{
@@ -174,12 +224,12 @@
 /* parte create */
 #main .create{
     display: flex;
-    justify-content: space-between;
+    
 }
 /* parte popolar */
 #main .popolar{
     display: flex;
-    justify-content: space-between;
+    
 }
 #main .popolar img{
     border-radius: 50%;
@@ -196,6 +246,7 @@
 }
 /* parte di sinistra */
 #footer .left{
+    
     display: flex;
     align-items: center;
     margin-left: 10px;
@@ -209,12 +260,13 @@
     margin-left: 10px;
 }
 #footer .left .icon-2 i{
-    margin-left: 10px;
+    margin-left: 5px;
     margin-bottom: 5px;
     margin-top: 5px;
 }
 /* parte centrale */
 #footer .central{
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -224,11 +276,14 @@
     justify-content: space-between;
     padding-top: 20px;
 }
-
-#footer .central .icon-up i{
-    margin-right: 15px;
+#footer .central .icon-up{
+    display: flex;
+    justify-content: center;
 }
-#footer .icon-down .time{
+#footer .central .icon-up i{
+    margin:0 5px;
+}
+.time{
     height: 3px;
     flex-basis: 80%;
     background-color:#505050; 
@@ -236,21 +291,87 @@
     align-self: center;
     margin: 0 5px;
 }
-#footer .icon-down .time div{
+.time div{
     width: 25%;
     background-color: lightgray;;
     height: 100%;
     border-radius: 10px;
 } 
 /* parte di destra */
-#footer .right div{
-    height: 100%;
+#footer .right{
     display: flex;
     align-items: center;
 }
+
+
 #footer .right div i{
-    margin-right: 10px;
+    margin-right: 8px;
 }
+.volume{
+    height: 3px;
+    width: 80px;
+    background-color:#505050; 
+    border-radius: 10px;
+    align-self: center;
+    margin: 0 5px;
+    display: none;
+}
+.volume div{
+    width: 25%;
+    background-color: lightgray;;
+    height: 100%;
+    border-radius: 10px;
+}      
+   
+
+
+/* media queries */
+/* versione tablet */
+@media screen and (min-width: 767px) {
+    #aside .icon-up .logo-big{
+        display: block;
+    } 
+    #aside .icon-up .logo-small{
+        display: none;
+    } 
+    #aside .icon-up .icon span{
+        display: block;
+    }
+    #aside .icon-up .playlist{
+        display: block;
+    }
+    #aside .icon-down div span{
+        display: block;
+    }
+    #main div{
+        flex-basis: calc(25% - 5px);
+        text-align: center;
+    }
+    #footer .left .text, .icon-2{
+        display: block;
+        margin-left: 10px;
+    }
+    #footer .left .icon-2{
+        margin-left: 30px;
+    }
+    #footer .central{
+        flex-basis: 45%;
+    }
+    #footer .central .icon-up i{
+        margin:0 15px;
+    }
+    .volume{
+        display: block;
+    }
+}    
+   
+
+        
+    
+    
+   
+
+    
 
 
 
