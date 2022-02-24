@@ -35,6 +35,7 @@
     font-size: 18px;
     margin: 0 5px 10px 0;  
 }
+
 /* Fine utility */
 /* container */
 #container{
@@ -93,6 +94,7 @@
 #aside .icon-up .icon{
     display: flex;
     align-items: center;
+    margin-left: 5px;
 }
 /* parte aggiunta per tablet e pc */
 #aside .icon-up .icon span{
@@ -102,6 +104,7 @@
 }
 #aside .icon-up .playlist{
     margin-top: 5px;
+    margin-left: 5px;
     color: grey;
     font-weight: bold;
     display: none;
@@ -124,6 +127,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    margin-left: 5px;
 }   
 
 #aside .icon-down .user{
@@ -246,7 +250,7 @@
 }
 /* parte di sinistra */
 #footer .left{
-    
+    flex-basis: 25%;
     display: flex;
     align-items: center;
     margin-left: 10px;
@@ -254,10 +258,14 @@
 #footer .left img{
     width: 40px;
 }
+#footer .left .text{
+    margin-right: 5px;
+    margin-left: 5px;
+}
 #footer .left .text, .icon-2{
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
+    
 }
 #footer .left .icon-2 i{
     margin-left: 5px;
@@ -266,10 +274,10 @@
 }
 /* parte centrale */
 #footer .central{
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-basis: 45%;
 }
 #footer .central .icon-down{
     display: flex;
@@ -278,7 +286,8 @@
 }
 #footer .central .icon-up{
     display: flex;
-    justify-content: center;
+    justify-content:space-evenly;
+    align-items: center;
 }
 #footer .central .icon-up i{
     margin:0 5px;
@@ -291,21 +300,27 @@
     align-self: center;
     margin: 0 5px;
 }
-.time div{
+.time .time-2{
     width: 25%;
     background-color: lightgray;;
     height: 100%;
     border-radius: 10px;
+    text-align: right;
+}
+.time .time-2 i{
+    transform: translateY(-5px);
+    opacity: 0;  
 } 
 /* parte di destra */
 #footer .right{
     display: flex;
     align-items: center;
+}    
+#footer .right .icon-right i{
+    margin-right: 5px;
 }
-
-
-#footer .right div i{
-    margin-right: 8px;
+#footer .right div .fa-volume-high{
+    display: none;
 }
 .volume{
     height: 3px;
@@ -316,18 +331,47 @@
     margin: 0 5px;
     display: none;
 }
-.volume div{
-    width: 25%;
+.volume .volume-2{
+    width: 45%;
     background-color: lightgray;;
     height: 100%;
     border-radius: 10px;
-}      
+    text-align: right;
+} 
+.volume .volume-2 i{
+    transform: translateY(-5px);
+    opacity: 0;  
+    color: white;
+    
+}     
    
 
 
 /* media queries */
+/* versione telefono xs (width 320px) */
+@media screen and (max-width: 320px) {
+    #footer .left img{
+        display: none;
+    }
+    #footer .central{
+        flex-basis: 55%;
+    }
+    #footer .right .icon-right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #footer .right .icon-right i{
+        margin-bottom: 10px;
+    }    
+    
+    
+}
 /* versione tablet */
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
+    #nav-lateral{
+        padding-right: 30px;
+    }
     #aside .icon-up .logo-big{
         display: block;
     } 
@@ -347,23 +391,73 @@
         flex-basis: calc(25% - 5px);
         text-align: center;
     }
-    #footer .left .text, .icon-2{
+    #footer .left .text{
         display: block;
-        margin-left: 10px;
     }
     #footer .left .icon-2{
-        margin-left: 30px;
+        display: flex;
+        flex-direction: row;
+        margin-left: 20px;
     }
-    #footer .central{
-        flex-basis: 45%;
-    }
+   
+    
     #footer .central .icon-up i{
         margin:0 15px;
     }
     .volume{
         display: block;
     }
-}    
+    #footer .right div .fa-volume-high{
+        display: inline
+    }
+} 
+   /* versione pc */
+@media screen and (min-width:1024px) {
+    #aside .icon-up .icon span:hover{
+        color: white;
+        cursor: pointer;
+    }
+    #aside .icon-up .playlist ul li:hover{
+        color: white;
+        cursor: pointer;
+    }
+    #aside .icon-down div span:hover{
+        color: white;
+        cursor: pointer;
+    }
+    #nav-central ul li:hover{
+        color: white;
+        cursor: pointer;
+    }
+    #main div{
+        flex-basis: calc(100%/6 - 5px);
+        text-align: center;
+    }
+    #main div img:hover{
+        filter: brightness(0.30);
+    }
+    #footer .left .icon-2 i:hover{
+        color: #57B560;
+    }
+    .volume div:hover{
+        background-color: #57B560;
+    }
+    .time .time-2:hover{
+        background-color:#57B560 ;
+    }
+    .time .time-2 i:hover{
+        opacity: 1;
+    }
+    .volume .volume-2 i:hover{
+        opacity: 1;
+    }
+    
+    #footer .central .icon-up .fa-circle-play:hover{
+        font-size: 28px;
+    }
+}
+    
+
    
 
         
